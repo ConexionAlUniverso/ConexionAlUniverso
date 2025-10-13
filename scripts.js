@@ -1,27 +1,4 @@
-// TIMER LINEAL DE 15 MINUTOS
-        const tiempoTotal = 15 * 60;
-        let tiempoRestante = tiempoTotal;
-        const tiempoDisplay = document.getElementById('tiempoDisplay');
-        const barraProgreso = document.getElementById('barraProgreso');
 
-        function actualizarTimer() {
-            if (tiempoRestante <= 0) {
-                tiempoRestante = tiempoTotal;
-            }
-
-            const minutos = Math.floor(tiempoRestante / 60);
-            const segundos = tiempoRestante % 60;
-            
-            tiempoDisplay.textContent = `${minutos}:${segundos.toString().padStart(2, '0')}`;
-
-            const progreso = ((tiempoTotal - tiempoRestante) / tiempoTotal) * 100;
-            barraProgreso.style.width = `${progreso}%`;
-
-            tiempoRestante--;
-        }
-
-        actualizarTimer();
-        setInterval(actualizarTimer, 1000);
 
         // Alternar FAQ
         function alternarFaq(elemento) {

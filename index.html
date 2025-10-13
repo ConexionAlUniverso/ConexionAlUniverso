@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Página de Transformación</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
 </head>
 <body>
@@ -20,7 +21,34 @@
             </div>
             <div class="barra-progreso-bg"></div>
             <div class="barra-progreso-fill" id="barraProgreso"></div>
-        </div>
+        </div>       
+
+        <script>
+            // TIMER LINEAL DE 15 MINUTOS
+        const tiempoTotal = 15 * 60;
+        let tiempoRestante = tiempoTotal;
+        const tiempoDisplay = document.getElementById('tiempoDisplay');
+        const barraProgreso = document.getElementById('barraProgreso');
+
+        function actualizarTimer() {
+            if (tiempoRestante <= 0) {
+                tiempoRestante = tiempoTotal;
+            }
+
+            const minutos = Math.floor(tiempoRestante / 60);
+            const segundos = tiempoRestante % 60;
+            
+            tiempoDisplay.textContent = `${minutos}:${segundos.toString().padStart(2, '0')}`;
+
+            const progreso = ((tiempoTotal - tiempoRestante) / tiempoTotal) * 100;
+            barraProgreso.style.width = `${progreso}%`;
+
+            tiempoRestante--;
+        }
+        actualizarTimer();
+        setInterval(actualizarTimer, 1000);
+        </script>
+
         <div class="contenedor-nav">
             <div class="logo">
                 <span>✨</span>
@@ -33,7 +61,7 @@
     <section class="seccion-hero-principal">
         <div class="contenedor-hero-principal">
             <div class="contenido-izquierdo">
-                <div class="insignia-hero">✨ DE TIKTOK AL UNIVERSO</div>
+                <div class="insignia-hero">✨ ELEVA TU ENERGÍA</div>
                 <h1 class="titulo-principal">CONEXIÓN<br><span class="titulo-destacado">AL UNIVERSO</span></h1>
                 <p class="subtitulo-principal">Manifiesta, Conecta y Recibe la Abundancia Cósmica</p>
                 <a href="#presentacion" class="boton-cta-principal">Descubrir Más</a>
@@ -163,6 +191,7 @@
                         <p>Conecta con la consciencia universal</p>
                     </div>
                 </li>
+                <!--Audio para manifestar opcional-->
                 <li class="item-paquete">
                     <span class="icono-item">🎯</span>
                     <div class="info-item">
@@ -170,13 +199,13 @@
                         <p>10 audios de meditación para manifestar</p>
                     </div>
                 </li>
-                <li class="item-paquete">
+                <!--<li class="item-paquete">
                     <span class="icono-item">🎧</span>
                     <div class="info-item">
                         <h4>BONO: Frecuencias Binaurales</h4>
                         <p>Audios para elevar tu vibración</p>
                     </div>
-                </li>
+                </li>-->
             </ul>
 
             <div class="precio-paquete">
@@ -385,7 +414,7 @@
             <a href="#libros" class="boton-cta">Conectar Ahora</a>
         </div>
     </section>
-</body>
+    </body>
     <!-- FOOTER -->
     <footer class="pie-pagina">
         <div class="logo-footer">
@@ -395,14 +424,14 @@
         <p>Manifiesta, conecta y recibe 🔮⚡🌙</p>
         
         <div class="enlaces-sociales">
-            <a href="#" class="enlace-social facebook" aria-label="Facebook">📘</a>
-            <a href="#" class="enlace-social instagram" aria-label="Instagram">📸</a>
-            <a href="#" class="enlace-social tiktok" aria-label="TikTok">🎵</a>
-            <a href="#" class="enlace-social youtube" aria-label="YouTube">📺</a>
+            <a href="#" class="enlace-social facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="enlace-social instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@conexionaluniverso?is_from_webapp=1&sender_device=pc" class="enlace-social tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Conexi%C3%B3naluniversoAfirmaciones" class="enlace-social youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
         <div class="copyright">
             <p>© 2025 Conexión al Universo. Todos los derechos reservados.</p>
-            <p>Hecho con ✨ para almas que buscan conectar</p>
+            <p>Hecho para almas que buscan conectar</p>
         </div>
     </footer>
