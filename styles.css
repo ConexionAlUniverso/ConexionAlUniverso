@@ -483,11 +483,18 @@
             background: var(--morado-medio);
             border-radius: 25px;
             padding: 40px;
-            text-align: center;
+            /*text-align: center;*/
             position: relative;
             overflow: hidden;
             border: 2px solid rgba(217, 70, 239, 0.2);
             transition: all 0.4s ease;
+        }
+        .portada-libro img {
+            width: 100%; /* La imagen ocupará el 100% del ancho del div padre */
+            height: 100%; /* La imagen ocupará el 100% del alto del div padre */
+            object-fit: cover; /* **CLAVE**: Esto hará que la imagen cubra todo el espacio, manteniendo su relación de aspecto y recortando si es necesario. */
+            display: block; /* Elimina cualquier espacio extra que algunos navegadores puedan añadir debajo de las imágenes */
+            border-radius: 15px; /* Opcional: Si quieres que la imagen misma tenga los bordes redondeados */
         }
 
         .tarjeta-libro::before {
@@ -526,12 +533,13 @@
             width: 220px;
             height: 300px;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, var(--morado-acento), var(--rosa-cosmico));
+            /*background: linear-gradient(135deg, var(--morado-acento), var(--rosa-cosmico));*/
             border-radius: 15px;
-            display: flex;
+            /*display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center;*/
             font-size: 5rem;
+            overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
@@ -547,6 +555,14 @@
             height: 380px;
             margin: 0 auto 40px;
             font-size: 7rem;
+        }
+
+        .portada-libro-grande img {
+            width: 100%; /* La imagen ocupará el 100% del ancho del div padre */
+            height: 100%; /* La imagen ocupará el 100% del alto del div padre */
+            object-fit: cover; /* **CLAVE**: Esto hará que la imagen cubra todo el espacio, manteniendo su relación de aspecto y recortando si es necesario. */
+            display: block; /* Elimina cualquier espacio extra que algunos navegadores puedan añadir debajo de las imágenes */
+            border-radius: 15px; /* Opcional: Si quieres que la imagen misma tenga los bordes redondeados */
         }
 
         .tarjeta-libro h3,
