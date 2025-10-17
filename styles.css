@@ -1261,11 +1261,6 @@
             .seccion-cta-final p {
                 font-size: 1.1rem;
             }
-
-            .tarjeta-testimonio {
-                min-width: 150px;
-            }
-
             .contenido-timer {
                 flex-wrap: wrap;
                 gap: 8px;
@@ -1374,5 +1369,8 @@
             .copyright{
                 font-size: 5px;
                 overflow: hidden;
+            }
+            .tarjeta-testimonio{
+                max-width: 350px;
             }
         }
